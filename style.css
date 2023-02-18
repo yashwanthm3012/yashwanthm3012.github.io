@@ -1,11 +1,20 @@
 body {
-    background-color: lightblue;
+    background-color: rgb(252, 220, 0);;
 }
 
 h1 {
-    color: crimson;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 100px;
 }
 
 h2 {
     color: blueviolet;
+}
+
+.github {
+  
+  color: white;
+  
 }
