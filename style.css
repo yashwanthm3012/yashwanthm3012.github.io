@@ -14,7 +14,9 @@ h2 {
 }
 
 .github {
-  
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
   color: white;
   
 }
