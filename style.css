@@ -1,14 +1,17 @@
 body {
     background-color: rgb(252, 220, 0);;
+    
+    
 }
 
-h1 {
-    color: black;
+h1{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: bolder;
     font-size: 100px;
-    top: 20px;
-    padding: 0%;
+    color: black;
+    margin-top: -10px;
+    margin-bottom: 5px;
+    
+    
 }
 
 h2 {
@@ -26,3 +29,12 @@ h2 {
 .mail {
     color: rebeccapurple;
 }
+
+span {
+    display: inline-block;
+    font-size: 50px;
+    /*new:*/
+    font-family: 'Times New Roman';
+    line-height: 0px;
+    height: 35px;
+  }
