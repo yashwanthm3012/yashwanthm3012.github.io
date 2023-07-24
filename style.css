@@ -30,6 +30,13 @@ h2 {
     color: rebeccapurple;
 }
 
+.linkedin {
+    position: fixed;
+    bottom: 20px;
+    right: 100px;
+    color: white;
+}
+
 span {
     display: inline-block;
     font-size: 50px;
