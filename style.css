@@ -1,17 +1,24 @@
 body {
-    background-color: rgb(252, 220, 0);;
+    
+    background-image: linear-gradient(to right, rgb(172,182,229), rgba(134,253,232,1));
+    border: 2px solid black ;
+    box-sizing: border-box; 
+    min-height: 91vh;
+    margin: 40px;
+    padding: 10px;
     
     
 }
 
 h1{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 100px;
-    color: black;
-    margin-top: -10px;
-    margin-bottom: 5px;
     
     
+}
+
+p{
+    padding: 10px;
+    margin: 0%;
 }
 
 h2 {
@@ -27,7 +34,10 @@ h2 {
 }
 
 .mail {
-    color: rebeccapurple;
+    color: white;
+    position: fixed;
+    bottom: 20px;
+    right: 150px;
 }
 
 .linkedin {
@@ -37,11 +47,39 @@ h2 {
     color: white;
 }
 
+a:hover {
+    color: royalblue;
+}
+
+
 span {
     display: inline-block;
     font-size: 50px;
-    /*new:*/
+    
     font-family: 'Times New Roman';
     line-height: 0px;
     height: 35px;
   }
+
+  .Title {
+    font-family: "Neue Montreal";
+    font-size: 50px;
+    color: black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    font-feature-settings: "palt";
+    font-weight: lighter;
+    
+  }
+
+.about {
+    color: black;
+    padding: 0px;
+    margin-left: 15px;
+    margin-top: -5px;
+    font-family: "Neue Montreal";
+    font-size: 14px;
+    font-feature-settings: "palt";
+
+}
