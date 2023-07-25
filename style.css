@@ -6,6 +6,7 @@ body {
     min-height: 91vh;
     margin: 40px;
     padding: 10px;
+    overflow: hidden;
     
     
 }
