@@ -62,7 +62,7 @@ span {
     height: 35px;
   }
 
-  .Title {
+.Title {
     font-family: "Neue Montreal";
     font-size: 50px;
     color: black;
@@ -72,7 +72,7 @@ span {
     font-feature-settings: "palt";
     font-weight: lighter;
     
-  }
+}
 
 .about {
     color: black;
@@ -82,5 +82,39 @@ span {
     font-family: "Neue Montreal";
     font-size: 14px;
     font-feature-settings: "palt";
+
+}
+
+.Info {
+    color: black;
+    margin-top: -15px;
+    margin-bottom: -15px;
+    margin-left: 5px;
+    font-size: 18px;
+    font-family: "Neue Montreal";
+    
+}
+
+.Contact {
+    color: black;
+    margin-top: 0px;
+    margin-left: 5px;
+    font-size: 18px;
+    font-family: "Neue Montreal";
+    
+}
+
+.snow {
+    margin-top: 50px;
+    margin-left: 15px;
+}
+
+.Projects {
+    color: black;
+    margin-top: 0px;
+    margin-left: 5px;
+    font-size: 18px;
+    font-family: "Neue Montreal";
+
 
 }
