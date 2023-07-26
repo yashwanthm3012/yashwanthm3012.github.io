@@ -1,5 +1,4 @@
 body {
-    
     background-image: linear-gradient(to right, rgb(172,182,229), rgba(134,253,232,1));
     border: 2px solid black ;
     box-sizing: border-box; 
@@ -7,14 +6,10 @@ body {
     margin: 40px;
     padding: 10px;
     overflow: hidden;
-    
-    
 }
 
 h1{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
-    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
 }
 
 p{
@@ -119,9 +114,7 @@ span {
 
 }
 
-/*------------------------------------------------*/
-/*Splash page*/
-
+/*-------------------------------------------------Splash page--------------------------------------------*/
 * {
     font-family: "Neue Montreal";
     font-weight: lighter;
@@ -183,3 +176,42 @@ header h4 {
     opacity: 0;
     transition: ease-in-out 0.5s;
 }
+/*--------------------------------------------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------------------Gradient Animation---------------------------------------*/
+:root{
+    --overlay-color-1: rgb(172,182,229);
+    --overlay-color-2: rgba(134,253,232,1);
+    --anim-duration: 2s;
+}
+
+#gradient {
+    opacity: 0.8;
+    background: none;
+}
+
+#gradient:after,
+#gradient:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+}
+
+#gradient:before {
+    background: linear-gradient(135deg, var(--overlay-color-2) 0%, var(--overlay-color-1) 100%);
+    animation: OpacityAnim var(--anim-duration) ease-in-out 0s infinite alternate;
+}
+
+#gradient:after {
+    background: linear-gradient(135deg, var(--overlay-color-1) 0%, var(--overlay-color-2) 100%);
+    animation: OpacityAnim var(--anim-duration) ease-in-out calc(-1 * var(--anim-duration)) infinite alternate;
+}
+
+@keyframes OpacityAnim {
+    0%{opacity: 1.0}
+    50%{opacity: 0.0}
+}
+/*--------------------------------------------------------------------------------------------------------*/
