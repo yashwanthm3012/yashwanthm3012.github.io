@@ -121,12 +121,19 @@ span {
 
 /*------------------------------------------------*/
 /*Splash page*/
+
+* {
+    font-family: "Neue Montreal";
+    font-weight: lighter;
+
+}
 header{
     position: relative;
     left: 0;
     top: 0;
     width: 1005;
     height:80px;
+    font-family: "Neue Montreal";
 }
 
 header h4 {
@@ -134,6 +141,7 @@ header h4 {
     left: 10%;
     bottom:lrem;
     font-size: 1.6rem;
+    font-family: "Neue Montreal";
 }
 
 
