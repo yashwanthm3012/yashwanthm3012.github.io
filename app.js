@@ -35,5 +35,5 @@ function project() {
     // by using id attribute
     let doc = document.getElementById("P1");
     // Changing the text content
-    doc.textContent = "❄️";
+    doc.textContent = "Pro";
 }
