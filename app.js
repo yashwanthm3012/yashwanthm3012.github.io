@@ -29,11 +29,3 @@ window.addEventListener('DOMContentLoaded', ()=> {
 })
 
 
-//Project Button
-function project() {
-    // Accessing the button element
-    // by using id attribute
-    let doc = document.getElementById("P1");
-    // Changing the text content
-    doc.textContent = "Pro";
-}

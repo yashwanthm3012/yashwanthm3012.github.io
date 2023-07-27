@@ -48,14 +48,14 @@ a:hover {
 }
 
 
-span {
+/*span {
     display: inline-block;
     font-size: 50px;
     
     font-family: 'Times New Roman';
     line-height: 0px;
     height: 35px;
-  }
+  }*/
 
 .Title {
     font-family: "Neue Montreal";
@@ -91,12 +91,21 @@ span {
     border: none;
 }
 
+.Home {
+    color: black;
+    font-size: 18px;
+    font-family: "Neue Montreal";
+    font-weight: lighter;
+    position:fixed;
+    margin-left: 10px;
+}
+
 .Projects{
     color: black;
     font-size: 18px;
     font-family: "Neue Montreal";
     font-weight: lighter;
-    position: fixed;
+    position:fixed;
     margin-left: 10px;
     margin-top: 1px;
 }
@@ -116,10 +125,22 @@ span {
     font-size: 18px;
     font-family: "Neue Montreal";
     font-weight: lighter;
-    position: fixed;
+    position:fixed;
     margin-left: -22px;
     margin-top: 57px;
 }
+
+/*.container {
+    position: relative;
+}
+
+#snow1 {
+    position:inherit;
+    top: 0;
+    bottom: 0;
+    margin-left: 15px;
+    margin-top: 5px;
+}*/
 
 /*-------------------------------------------------Splash page--------------------------------------------*/
 * {
