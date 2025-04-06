@@ -1,245 +1,61 @@
-body {
-    background-image: linear-gradient(to right, rgb(172,182,229), rgba(134,253,232,1));
-    border: 2px solid black ;
-    box-sizing: border-box; 
-    min-height: 91vh;
-    margin: 40px;
-    padding: 10px;
-    overflow: hidden;
+/* Global styles */
+html, body {
+    background: linear-gradient(to right, #fff8f0, #fce8e6); /* Soft professional gradient */
+    overflow: hidden; /* Prevent scrolling */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
 }
 
-h1{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
+/* Title styling */
+.Title {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 30px;
+    color: black;
+    font-feature-settings: "palt";
+    font-weight: 300;
+    margin: 0;
 }
 
-p{
+/* Container for the title */
+.title-wrapper {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+/* Navigation link container */
+.nav-container {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+/* Link styling */
+.nav-container a {
+    font-size: 18px;
+    text-decoration: none;
+    color: darkblue;
+    font-weight: 500;
+}
+
+.nav-container a:hover {
+    color: royalblue;
+}
+
+/* Optional paragraph styling */
+p {
     padding: 10px;
-    margin: 0%;
+    margin: 0;
+}
+
+/* Headings */
+h1, h2 {
+    margin: 0;
 }
 
 h2 {
     color: blueviolet;
 }
-
-.github {
-  position: fixed;
-  bottom: 20px;
-  right: 50px;
-  color: white;
-  
-}
-
-.mail {
-    color: white;
-    position: fixed;
-    bottom: 20px;
-    right: 150px;
-}
-
-.linkedin {
-    position: fixed;
-    bottom: 20px;
-    right: 100px;
-    color: white;
-}
-
-a:hover {
-    color: royalblue;
-}
-
-
-/*span {
-    display: inline-block;
-    font-size: 50px;
-    
-    font-family: 'Times New Roman';
-    line-height: 0px;
-    height: 35px;
-  }*/
-
-.Title {
-    font-family: "Neue Montreal";
-    font-size: 50px;
-    color: black;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 10px;
-    font-feature-settings: "palt";
-    font-weight: lighter;
-    
-}
-
-.about {
-    color: black;
-    padding: 0px;
-    margin-left: 15px;
-    margin-top: -5px;
-    font-family: "Neue Montreal";
-    font-size: 14px;
-    font-feature-settings: "palt";
-
-}
-
-.snow {
-    margin-top: 50px;
-    margin-bottom: 5px;
-    margin-left: 15px;
-}
-
-.astext {
-    background: none;
-    border: none;
-}
-
-.Home {
-    color: black;
-    font-size: 18px;
-    font-family: "Neue Montreal";
-    font-weight: lighter;
-    position:fixed;
-    margin-left: 10px;
-}
-
-.Projects{
-    color: black;
-    font-size: 18px;
-    font-family: "Neue Montreal";
-    font-weight: lighter;
-    position:fixed;
-    margin-left: 10px;
-    margin-top: 1px;
-}
-
-.Info{
-    color: black;
-    font-size: 18px;
-    font-family: "Neue Montreal";
-    font-weight: lighter;
-    position:fixed;
-    margin-left: -6px;
-    margin-top: 29px;
-}
-
-.Contact{
-    color: black;
-    font-size: 18px;
-    font-family: "Neue Montreal";
-    font-weight: lighter;
-    position:fixed;
-    margin-left: -22px;
-    margin-top: 57px;
-}
-
-/*.container {
-    position: relative;
-}
-
-#snow1 {
-    position:inherit;
-    top: 0;
-    bottom: 0;
-    margin-left: 15px;
-    margin-top: 5px;
-}*
-
-/*-------------------------------------------------Splash page--------------------------------------------*/
-* {
-    font-family: "Neue Montreal";
-    font-weight: lighter;
-
-}
-header{
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 1005;
-    height:80px;
-    font-family: "Neue Montreal";
-}
-
-header h4 {
-    position: absolute;
-    left: 10%;
-    bottom:lrem;
-    font-size: 1.6rem;
-    font-family: "Neue Montreal";
-}
-
-
-.intro {
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(to right,#00416A,#E4E5E6);
-    transition: 2s;
-}
-
-.logo-header {
-    position: absolute;
-    top :40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #ffffff;
-
-}
-
-.logo {
-    position: relative;
-    display: inline-block;
-    bottom: -20px;
-    opacity: 0;
-}
-
-.logo.active {
-    bottom:0;
-    opacity: 1;
-    transition: ease-in-out 0.5s;
-}
-
-.logo.fade {
-    bottom: 150px;
-    opacity: 0;
-    transition: ease-in-out 0.5s;
-}
-/*--------------------------------------------------------------------------------------------------------*/
-
-
-
-/*-----------------------------------------------Gradient Animation---------------------------------------*/
-:root{
-    --overlay-color-1: rgb(172,182,229);
-    --overlay-color-2: rgba(134,253,232,1);
-    --anim-duration: 2s;
-}
-
-#gradient {
-    opacity: 0.8;
-    background: none;
-}
-
-#gradient:after,
-#gradient:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0; bottom: 0; left: 0; right: 0;
-}
-
-#gradient:before {
-    background: linear-gradient(135deg, var(--overlay-color-2) 0%, var(--overlay-color-1) 100%);
-    animation: OpacityAnim var(--anim-duration) ease-in-out 0s infinite alternate;
-}
-
-#gradient:after {
-    background: linear-gradient(135deg, var(--overlay-color-1) 0%, var(--overlay-color-2) 100%);
-    animation: OpacityAnim var(--anim-duration) ease-in-out calc(-1 * var(--anim-duration)) infinite alternate;
-}
-
-@keyframes OpacityAnim {
-    0%{opacity: 1.0}
-    50%{opacity: 0.0}
-}
-/*--------------------------------------------------------------------------------------------------------*/
