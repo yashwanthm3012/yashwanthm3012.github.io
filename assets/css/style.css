@@ -1,6 +1,6 @@
 /* Global styles */
 html, body {
-    background: linear-gradient(to right, #fff8f0, #fce8e6); /* Soft professional gradient */
+    background: linear-gradient(to right, #fff8f0, #eaf2f3); /* Soft professional gradient */
     overflow: hidden; /* Prevent scrolling */
     margin: 0;
     padding: 0;
@@ -30,7 +30,7 @@ html, body {
 .nav-container {
     position: absolute;
     top: 20px;
-    right: 30px;
+    right: 300px;
 }
 
 /* Link styling */
