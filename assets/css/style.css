@@ -1,15 +1,24 @@
 /* Global styles */
 html, body {
-    background: linear-gradient(to right, #fff8f0, #eaf2f3); /* Soft professional gradient */
-    overflow: hidden; /* Prevent scrolling */
+    background: linear-gradient(to right, #fff8f0, #eaf2f3);
     margin: 0;
     padding: 0;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
-}
-
-/* Title styling */
-.Title {
+    box-sizing: border-box;
+  }
+  
+  /* Header container using Flexbox */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    flex-wrap: wrap;
+  }
+  
+  /* Title styling */
+  .Title {
     font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
     font-size: 30px;
@@ -17,45 +26,51 @@ html, body {
     font-feature-settings: "palt";
     font-weight: 300;
     margin: 0;
-}
-
-/* Container for the title */
-.title-wrapper {
-    position: absolute;
-    top: 20px;
-    left: 30px;
-}
-
-/* Navigation link container */
-.nav-container {
-    position: absolute;
-    top: 20px;
-    right: 300px;
-}
-
-/* Link styling */
-.nav-container a {
+  }
+  
+  /* Navigation links container */
+  .nav-links {
+    display: flex;
+    gap: 30px;
+  }
+  
+  /* Link styling */
+  .nav-links a {
     font-size: 18px;
     text-decoration: none;
     color: darkblue;
     font-weight: 500;
-}
-
-.nav-container a:hover {
+  }
+  
+  .nav-links a:hover {
     color: royalblue;
-}
-
-/* Optional paragraph styling */
-p {
-    padding: 10px;
+  }
+  
+  /* Paragraphs and Headings */
+  p {
+    padding: 10px 0;
     margin: 0;
-}
-
-/* Headings */
-h1, h2 {
+  }
+  
+  h1, h2 {
     margin: 0;
-}
-
-h2 {
+  }
+  
+  h2 {
     color: blueviolet;
-}
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 600px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  
