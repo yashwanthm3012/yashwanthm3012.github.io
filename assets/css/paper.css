@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #fff8f0, #eaf2f3);
+    min-height: 100vh;
+    box-sizing: border-box;
+    color: #333;
+    font-weight: 300;
+  }
+  
+  .header {
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  
+  .Title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    font-weight: 300;
+    padding-bottom: 6px;
+    margin-left: 20px;
+  }
+  
+  .content {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+  }  
+  .content ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  .paper-card {
+    margin-bottom: 30px;
+    padding-left: 0;
+  }
+  
+  .paper-title {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #007acc;
+    margin-bottom: 4px;
+    display: inline-block;
+    word-wrap: break-word;
+  }
+  
+  .paper-meta {
+    font-size: 0.875rem;
+    color: #777;
+    margin-bottom: 4px;
+  }
+  
+  .paper-description {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.5;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .back-link {
+    display: inline-block;
+    margin-top: 40px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #007acc;
+    font-weight: 300;
+  }
+  
