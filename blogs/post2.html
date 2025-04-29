@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How I Ended Up Loving a Subject I Once Failed</title>
+  <meta name="description" content="Explore how grammar-based code generation on Keybr rekindled my interest in Theory of Computation.">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blogs.css">
+</head>
+
+<body>
+  <header>
+    <h1>How I Ended Up Loving a Subject I Once Failed</h1>
+    <p class="subheading">A Deep Dive into Keybr's Grammar-Based Code Generation</p>
+  </header>
+
+  <main>
+    <article>
+      <section>
+        <p>
+          Two years ago, during my engineering studies, like every Computer Science student, I had to take a subject called <strong>Theory of Computation</strong>. At the time, I honestly hated it. I used to wonder, "Why should I study this? What's the point?" — and truth be told, I failed it twice.
+        </p>
+        <p>
+          Fast forward to today, I've been into touch typing for the past 3–4 years. One of my go-to platforms is <a href="https://keybr.com" target="_blank">Keybr.com</a>, which helps improve typing speed and accuracy using real text instead of random gibberish. Recently, while exploring the code learning section of the site, I noticed several programming languages listed for practice — C++, Python, TypeScript, and more.
+        </p>
+        <p>
+          But something was missing.
+        </p>
+        <p>
+          There was no Java.
+        </p>
+        <p>
+          As a fan of open-source projects, I thought: Why not add it myself? So, I fetched the repository from GitHub and started digging into the codebase.
+        </p>
+      </section>
+
+      <section>
+        <h2>My Journey: From Failing to Fascination</h2>
+        <p>
+          Looking back, my struggle with Theory of Computation wasn't because the subject was inherently difficult. It was because I couldn't see its <strong>real-world applications</strong>. The abstract nature of finite automata, context-free grammars, and Turing machines felt disconnected from the programming I loved.
+        </p>
+        <p>
+          After failing twice, I finally passed the subject with minimal understanding. I memorized what I needed to pass, but the deeper concepts remained a mystery. I shelved the knowledge as "something I'll never need again."
+        </p>
+        <p>
+          The Keybr project became my unexpected turning point. As I explored the code generation system, concepts that once confused me suddenly began making perfect sense. The abstract theories had found their practical application right in front of me.
+        </p>
+      </section>
+
+      <section>
+        <h2>Expectation vs Reality</h2>
+        <p>
+          <strong>Initial assumption:</strong> The code snippets shown in Keybr were manually written and curated from a database of examples.
+        </p>
+        <p>
+          <strong>Reality:</strong> The code wasn't hardcoded at all. Instead, it was being generated dynamically using grammar rules—the very concepts I struggled with in university!
+        </p>
+        <p>
+          That's when the real curiosity kicked in, and I found myself diving deep into a subject I once dreaded.
+        </p>
+      </section>
+
+      <section>
+        <h2>A Journey into Grammars</h2>
+        <p>In the world of programming languages and compilers, there are many ways to define grammar:</p>
+        <ul>
+          <li><strong>COBOL:</strong> ISO 1989:1985</li>
+          <li><strong>BNF (Backus-Naur Form):</strong> The classic notation for describing syntax</li>
+          <li><strong>YACC/Bison:</strong> Parser generators with their own grammar notation</li>
+          <li><strong>ANTLR:</strong> ANother Tool for Language Recognition</li>
+          <li><strong>Extended BNF (EBNF):</strong> ISO/IEC 14977:1996</li>
+          <li><strong>PEG:</strong> Parsing Expression Grammar</li>
+        </ul>
+        <p>
+          Each of these meta-languages has its pros and cons. For example:
+        </p>
+        <ul>
+          <li><strong>EBNF</strong> is cleaner and more expressive than BNF, but assumes a linear symbol structure.</li>
+          <li><strong>YACC/Bison</strong> and <strong>ANTLR</strong> are powerful but can be verbose and difficult to maintain.</li>
+          <li><strong>PEG</strong> offers ordered choice and is unambiguous, making it ideal for code generation.</li>
+        </ul>
+        <p>
+          Keybr uses a custom <strong>PEG-style grammar</strong> inspired by <em>Peggy</em>, a parser generator for JavaScript. It's readable, flexible, and supports custom syntax extensions like <code>*</code> as a wildcard and <code>_</code> for spaces.
+        </p>
+      </section>
+
+      <section>
+        <h2>Grammar Comparison</h2>
+        <p>To better understand the difference, here's a simple expression grammar in two formats:</p>
+        
+        <h3>BNF Style</h3>
+<pre><code>&lt;expr&gt; ::= &lt;term&gt; "+" &lt;expr&gt; | &lt;term&gt;
+&lt;term&gt; ::= &lt;factor&gt; "*" &lt;term&gt; | &lt;factor&gt;
+&lt;factor&gt; ::= "(" &lt;expr&gt; ")" | &lt;const&gt;
+&lt;const&gt; ::= [0-9]+</code></pre>
+
+        <h3>PEG Style (Keybr Uses This)</h3>
+<pre><code>expr -> term "+" expr / term
+term -> factor "*" term / factor
+factor -> "(" expr ")" / const
+const -> [0-9]+</code></pre>
+      </section>
+
+      <section>
+        <h2>Understanding the Pipeline</h2>
+          <li><strong>.g file → .ts file:</strong> Grammar rules are written in custom PEG-style .g files. The system parses these files using <code>parse.ts</code> and <code>peggy</code> into an abstract syntax tree (AST), which is then saved as a TypeScript Rules object.
+<pre><code>// Generated output
+export default { 
+  classDeclaration: {
+    type: "sequence",
+    elements: [
+      { type: "literal", value: "public" },
+      { type: "space" },
+      { type: "literal", value: "class" },
+      // More elements...
+    ]
+  },
+  // More rules...
+} as Rules;</code></pre>
+          </li>
+
+          <li><strong>.ts grammar → Syntax object:</strong> The grammar is imported and used to create a <code>Syntax</code> object that can generate code snippets.
+<pre><code>import { grammar_java } from "./syntax/grammars.ts";
+
+static readonly JAVA = new Syntax("java", "Java", grammar_java);</code></pre>
+          </li>
+
+          <li><strong>Syntax.generate() method:</strong> This method recursively generates code using the grammar AST and builds a <code>StyledText</code> string.
+<pre><code>generate(flags: Flags, rng?: RNG): StyledText {
+  const output = new Output(200);
+  while (true) {
+    try {
+      if (output.length > 0) output.separate(" ");
+      generate(this.grammar, { start: this.start, flags, output, rng });
+    } catch (err) {
+      if (err === Output.Stop) break;
+      else throw err;
+    }
+  }
+  return output.text;
+}</code></pre>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>What Makes This System Clever</h2>
+        <p>
+          By using a grammar-based approach instead of hardcoded examples, Keybr gains several advantages:
+        </p>
+        <ul>
+          <li><strong>Infinite variety:</strong> The system can generate unlimited unique code samples</li>
+          <li><strong>Syntactic correctness:</strong> All generated code follows proper syntax rules</li>
+          <li><strong>Customizable difficulty:</strong> The generator can adapt complexity based on user skill</li>
+          <li><strong>Maintainability:</strong> Adding new language features requires updating grammar rules, not creating new examples</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Summary: The Grammar-Based Generator Workflow</h2>
+<pre><code>.g grammar file
+    ↓
+[parse.ts + Peggy] — parses grammar into AST
+    ↓
+Generated .ts file exporting Rules object
+    ↓
+Syntax class loads the grammar
+    ↓
+generate() recursively walks AST + uses RNG
+    ↓
+Output object builds final string (StyledText)</code></pre>
+      </section>
+
+      <section>
+        <h2>Adding Java Support: My Contribution (#442)</h2>
+        <p>
+          To add Java support to Keybr, I didn't need to create hundreds of code examples. Instead, I just had to define the grammar rules that describe Java syntax. Here's a simplified version of what I added:
+        </p>
+        
+<pre><code>// java.g - Simplified snippet of my contribution
+start -> classDeclaration
+
+classDeclaration
+  -> "public" _ "class" _ identifier _ "{" _
+    mainMethod _
+    "}"
+
+mainMethod
+  -> "public" _ "static" _ "void" _ "main" _ "(" _ "String[]" _ "args" _ ")" _ "{" _
+    statement* _
+    "}"
+
+statement
+  -> variableDeclaration
+  | ifStatement
+  | forLoop
+  | methodCall
+  | returnStatement
+
+// Additional rules for Java syntax...</code></pre>
+        
+        <p>
+          With just these grammar rules, Keybr can now generate an infinite variety of syntactically correct Java code snippets for typing practice!
+        </p>
+      </section>
+
+      <section>
+        <h2>Why This Matters</h2>
+        <p>
+          Back when I was failing Theory of Computation, I had no idea where those abstract grammars and rules would ever be useful. Now, years later, I see it being used in something as modern and practical as automated code generation for a typing app — a tool I use almost every day.
+        </p>
+        <p>
+          Funny how things come full circle.
+        </p>
+        <p>
+          There's a profound lesson here about computer science education. The theoretical concepts we learn aren't just academic exercises—they're the foundational building blocks that power the tools we use every day. From the parser in your IDE to the compiler that builds your code, these "abstract" concepts are everywhere.
+        </p>
+        <p>
+          So, to anyone struggling with theory-heavy CS subjects: <strong>stick with it</strong>. You never know when or how that knowledge might come back — and help you build something really cool.
+        </p>
+      </section>
+      
+      <section>
+        <h2>Want to Explore This Further?</h2>
+        <p>If this story resonated with you, consider these next steps:</p>
+        <ul>
+          <li>Check out the <a href="https://github.com/aradzie/keybr" target="_blank">Keybr Repository</a> on GitHub</li>
+          <li>Try building your own grammar-based code generator</li>
+          <li>Share your own story of rediscovering the value of a difficult subject</li>
+        </ul>
+      </section>
+      
+    </article>
+  </main>
+
+  <footer>
+    <p>Posted on April 29, 2025 by Yashwanth M</p>
+    <p>Have a question or comment? <a href="dev.yashwanthm3012@gamil.com">Email me</a></p>
+    <a href="../index.html">← Back to Home</a>
+  </footer>
+</body>
+</html>
