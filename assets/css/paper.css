@@ -74,3 +74,8 @@ body {
     font-weight: 300;
   }
   
+  .date {
+    color: #888;
+    font-size: 0.9em;
+    margin-right: 10px;
+  }
