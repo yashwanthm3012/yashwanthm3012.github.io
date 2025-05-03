@@ -38,7 +38,7 @@ html, body {
   .nav-links a {
     font-size: 18px;
     text-decoration: none;
-    color: darkblue;
+    color: rgb(68, 68, 235);
     font-weight: 500;
   }
   
